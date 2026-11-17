@@ -530,7 +530,7 @@ h1 span {
   font-size: clamp(2rem, 4vw, 2.8rem);
 }
 
-.support-section > p:not(.eyebrow, .placeholder-hint) {
+.support-section > p:not(.eyebrow, .support-privacy-note) {
   max-width: 500px;
   margin: 0 auto 1.5rem;
   color: var(--muted);
@@ -545,28 +545,39 @@ h1 span {
   text-align: left;
 }
 
-.email-placeholder {
+.email-card {
   display: inline-flex;
   flex-direction: column;
   gap: 0.15rem;
   padding: 0.8rem 1.5rem;
-  border: 1px dashed var(--accent);
+  border: 1px solid var(--accent);
   border-radius: 14px;
   color: var(--text);
 }
 
-.email-placeholder span,
-.placeholder-hint {
+.email-card span {
   color: var(--muted);
   font-size: 0.75rem;
 }
 
-.email-placeholder strong {
+.email-card a {
+  color: var(--text);
   font-size: 1rem;
+  font-weight: 700;
+  text-decoration: none;
 }
 
-.placeholder-hint {
-  margin: 0.7rem 0 0;
+.email-card a:hover,
+.email-card a:focus-visible {
+  text-decoration: underline;
+}
+
+.support-privacy-note {
+  max-width: 540px;
+  margin: 0.8rem auto 0;
+  color: var(--muted);
+  font-size: 0.75rem;
+  line-height: 1.5;
 }
 
 .privacy-section {
