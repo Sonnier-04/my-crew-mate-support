@@ -1,0 +1,313 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#111827">
+    <meta name="description" content="My Crew Mate iOS 앱의 개인정보 처리방침. 저장 정보, JSON 백업·복원, 보관 및 삭제, 문의 방법을 안내합니다.">
+    <title>개인정보 처리방침 | My Crew Mate</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+      /* Privacy page styles are scoped to avoid changes to the support home. */
+      .policy-main {
+        max-width: 820px;
+        padding-block: 4.25rem 5rem;
+      }
+      .policy-breadcrumb {
+        display: flex;
+        align-items: center;
+        gap: 0.6rem;
+        margin: 0 0 2.65rem;
+        color: var(--muted);
+        font-size: 0.87rem;
+      }
+      .policy-breadcrumb a {
+        color: var(--accent);
+        text-decoration: underline;
+        text-underline-offset: 3px;
+      }
+      .policy-breadcrumb a:hover,
+      .policy-breadcrumb a:focus-visible {
+        color: var(--text);
+      }
+      .policy-main > .eyebrow {
+        margin-bottom: 0.85rem;
+        font-size: 0.76rem;
+      }
+      .policy-main > h1 {
+        margin: 0 0 1.3rem;
+        font-size: clamp(2.4rem, 6vw, 3.75rem);
+        line-height: 1.16;
+        letter-spacing: -0.05em;
+      }
+      .policy-introduction {
+        max-width: 740px;
+        margin: 0 0 1.8rem;
+      }
+      .policy-introduction p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 1rem;
+        line-height: 1.8;
+      }
+      .policy-keyline {
+        width: 48px;
+        height: 3px;
+        margin: 0 0 1.9rem;
+        border-radius: 999px;
+        background: var(--accent);
+      }
+      .policy-essentials {
+        padding: 1.4rem 1.5rem;
+        border: 1px solid var(--line);
+        border-left: 4px solid var(--accent);
+        border-radius: 13px;
+        background: var(--surface);
+      }
+      .policy-essentials h2 {
+        margin: 0 0 0.9rem;
+        color: var(--accent);
+        font-size: 0.93rem;
+        letter-spacing: -0.01em;
+      }
+      .policy-highlights {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.6rem;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+      .policy-highlights li {
+        padding: 0.48rem 0.8rem;
+        border-radius: 999px;
+        background: var(--accent-soft);
+        color: var(--text);
+        font-size: 0.84rem;
+        font-weight: 650;
+        line-height: 1.4;
+      }
+      .policy-highlights li:last-child {
+        border: 1px solid var(--line);
+        background: transparent;
+      }
+      .policy-content {
+        max-width: none;
+        margin-top: 2.6rem;
+      }
+      .policy-content section {
+        padding-block: 1.75rem 1.85rem;
+      }
+      .policy-content section:first-child {
+        border-top: 1px solid var(--line);
+      }
+      .policy-content h2 {
+        margin-bottom: 0.9rem;
+        color: var(--text);
+        font-size: clamp(1.28rem, 3vw, 1.5rem);
+        line-height: 1.4;
+      }
+      .policy-content h3 {
+        margin: 1.1rem 0 0.55rem;
+        color: var(--text);
+        font-size: 1rem;
+        line-height: 1.6;
+      }
+      .policy-content p,
+      .policy-content li {
+        color: var(--muted);
+        font-size: 1rem;
+        line-height: 1.8;
+        overflow-wrap: anywhere;
+      }
+      .policy-content p + p { margin-top: 0.9rem; }
+      .policy-content ul {
+        gap: 0.25rem;
+        margin: 0.7rem 0 1.15rem;
+        padding-left: 1.4rem;
+      }
+      .policy-content strong { color: var(--text); }
+      .policy-callout {
+        margin: 1.2rem 0;
+        padding: 1.05rem 1.25rem;
+        border-radius: 12px;
+        background: var(--accent-soft);
+      }
+      .policy-callout strong {
+        display: block;
+        margin-bottom: 0.3rem;
+        font-size: 0.96rem;
+      }
+      .policy-callout p { margin: 0; color: var(--text); }
+      .policy-contact {
+        margin-top: 1.4rem;
+        padding: 1.3rem 1.45rem;
+        border: 1px solid var(--line);
+        border-radius: 13px;
+        background: var(--surface);
+      }
+      .policy-contact .policy-contact-label {
+        margin-bottom: 0.25rem;
+        color: var(--muted);
+        font-size: 0.84rem;
+      }
+      .policy-contact .policy-contact-name {
+        display: block;
+        margin-bottom: 0.15rem;
+        color: var(--text);
+        font-size: 1.15rem;
+      }
+      .policy-contact a {
+        color: var(--accent);
+        font-size: 1rem;
+        font-weight: 650;
+        text-decoration: underline;
+        text-underline-offset: 3px;
+      }
+      .policy-contact a:hover,
+      .policy-contact a:focus-visible { color: var(--text); }
+      .policy-content .policy-date {
+        margin-top: 1rem;
+        color: var(--text);
+        font-weight: 700;
+      }
+      .policy-bottom-link { margin-top: 1.85rem; }
+      @media (max-width: 700px) {
+        .site-header.policy-header nav { display: none; }
+        .policy-main { padding-block: 2rem 3.5rem; }
+        .policy-breadcrumb { margin-bottom: 2.15rem; }
+        .policy-essentials { padding: 1.15rem 1.05rem; }
+        .policy-highlights li { font-size: 0.8rem; }
+        .policy-content { margin-top: 2rem; }
+        .policy-content section { padding-block: 1.45rem 1.6rem; }
+        .policy-content p, .policy-content li { font-size: 1rem; }
+        .policy-contact { padding: 1.15rem 1rem; }
+      }
+    </style>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">본문으로 건너뛰기</a>
+    <header class="site-header policy-header">
+      <a class="brand" href="index.html" aria-label="My Crew Mate 고객지원 홈">
+        <span class="brand-mark" aria-hidden="true">M</span>
+        <span>My Crew Mate</span>
+      </a>
+      <nav aria-label="주요 메뉴">
+        <a href="index.html#guide">사용 가이드</a>
+        <a href="index.html#faq">자주 묻는 질문</a>
+        <a href="index.html#support">고객지원</a>
+      </nav>
+    </header>
+
+    <main class="policy-main section-shell" id="main">
+      <p class="policy-breadcrumb" aria-label="현재 위치">
+        <a href="index.html">고객지원 홈</a><span aria-hidden="true">/</span><span>개인정보 처리방침</span>
+      </p>
+      <p class="eyebrow">Privacy Policy</p>
+      <h1>개인정보 처리방침</h1>
+      <div class="policy-introduction">
+        <p>My Crew Mate는 사용자의 근무와 일상을 편리하게 기록하고 관리할 수 있도록 돕는 iOS 앱입니다. 사용자의 기록은 기기에 저장되며, 이 페이지에서는 정보의 이용과 백업·복원, 보관 및 삭제, 문의 방법을 안내합니다.</p>
+      </div>
+      <div class="policy-keyline" aria-hidden="true"></div>
+      <aside class="policy-essentials" aria-labelledby="essentials-heading">
+        <h2 id="essentials-heading">한눈에 보는 개인정보 처리</h2>
+        <ul class="policy-highlights">
+          <li>기기에 기록 저장</li>
+          <li>운영자 서버 자동 전송 없음</li>
+          <li>JSON 백업은 비암호화</li>
+        </ul>
+      </aside>
+
+      <div class="policy-content">
+        <section aria-labelledby="policy-information">
+          <h2 id="policy-information">1. 앱에서 처리하는 정보</h2>
+          <p>My Crew Mate는 근무표 작성 및 관리를 위해 다음 정보를 처리합니다.</p>
+          <ul>
+            <li>날짜별 근무 기록과 메모</li>
+            <li>근무 종류의 이름, 색상 및 표시 상태</li>
+            <li>사용자가 입력한 이름과 별명</li>
+            <li>앱 시작 안내 진행 상태</li>
+            <li>테마, 대시보드와 빠른 입력의 배치 등 사용자 설정</li>
+          </ul>
+          <p>이 정보는 달력과 근무 현황을 표시하고, 사용자가 원하는 설정을 유지하는 데 사용됩니다. 메모나 근무 종류 이름에 직접 입력한 개인정보도 저장될 수 있습니다.</p>
+        </section>
+
+        <section aria-labelledby="policy-storage">
+          <h2 id="policy-storage">2. 정보의 저장과 이용</h2>
+          <p>근무 기록과 날짜별 메모, 근무 종류는 사용자의 iPhone에 저장됩니다. 이름과 별명, 테마, 화면 배치 등 앱 설정도 기기에 저장됩니다.</p>
+          <ul>
+            <li>계정 가입 없이 사용할 수 있습니다.</li>
+            <li>인터넷 연결 없이 근무 기록을 관리할 수 있습니다.</li>
+            <li>앱에 저장된 근무 기록을 운영자 서버로 자동 전송하지 않습니다.</li>
+            <li>앱 자체의 클라우드 동기화 기능은 제공하지 않습니다.</li>
+          </ul>
+          <p>사용자가 직접 백업 파일을 내보내거나 공유하면, 선택한 저장 위치나 외부 서비스로 파일이 전달될 수 있습니다.</p>
+        </section>
+
+        <section aria-labelledby="policy-backup">
+          <h2 id="policy-backup">3. 백업 및 복원</h2>
+          <p>사용자는 앱의 백업 기능으로 JSON 파일을 내보내고, 파일을 선택해 기록을 복원할 수 있습니다.</p>
+          <h3>백업에 포함되는 정보</h3>
+          <ul>
+            <li>근무 기록과 날짜별 메모</li>
+            <li>근무 종류 정보 및 과거 기록 표시를 위해 보관된 근무 종류 정보</li>
+          </ul>
+          <h3>백업에 포함되지 않는 정보</h3>
+          <ul>
+            <li>프로필 이름과 별명</li>
+            <li>테마, 화면 배치 등 앱 설정</li>
+          </ul>
+          <div class="policy-callout">
+            <strong>백업 파일 보관 안내</strong>
+            <p>JSON 백업 파일은 암호화되어 있지 않습니다. 파일에 접근할 수 있는 사람은 근무 기록과 메모를 읽을 수 있으므로, 보관 위치와 공유 대상을 신중하게 선택해 주세요.</p>
+          </div>
+          <p>복원 시에는 선택한 파일의 내용을 미리 확인할 수 있습니다. 앱은 기존 기록의 안전 사본을 만들고 필요한 검증과 확인 절차를 거친 뒤 기록을 백업 내용으로 교체합니다. 교체되는 항목은 백업 파일의 버전과 내용에 따라 달라질 수 있습니다.</p>
+          <p>복원을 취소하거나 완료한 뒤에도 내부 복구 사본과 복원 이력에 기존 기록 또는 복원 대상 기록이 남아 있을 수 있습니다.</p>
+        </section>
+
+        <section aria-labelledby="policy-deletion">
+          <h2 id="policy-deletion">4. 정보의 보관 및 삭제</h2>
+          <p>근무 기록과 날짜별 메모는 사용자가 앱에서 수정하거나 삭제할 수 있습니다. 다만 현재 기록을 삭제해도 이미 만든 JSON 백업, 내부 복구 사본, 복원 이력에는 같은 내용이 남아 있을 수 있습니다.</p>
+          <p>설정에서 삭제한 근무 종류는 과거 기록을 표시하기 위해 보관되며 새 백업에도 포함될 수 있습니다. 이전 버전에서 가져온 기록의 원본과 이전 이력도 기기 안에 남아 있을 수 있습니다. 현재 앱에는 내부 복구 사본과 복원 이력을 자동으로 정리하거나 개별 삭제하는 기능이 없습니다.</p>
+          <p>백업 파일을 내보내거나 선택할 때 임시 파일이 생길 수 있습니다. 앱은 작업 완료 시 임시 파일을 자동 삭제하지 않으며, 파일의 실제 정리 시점은 저장 위치와 iOS 동작에 따라 달라질 수 있습니다.</p>
+          <p>iPhone에서 앱을 삭제하면 해당 기기의 앱 내부 기록과 설정이 제거됩니다. 다만 iPhone의 ‘앱 정리하기’ 기능은 문서와 데이터를 보존하며, iCloud 기기 백업이나 앱 밖에 따로 저장한 JSON 파일은 앱 삭제 후에도 남아 있을 수 있습니다.</p>
+          <p>외부에 내보낸 백업 파일은 사용자가 해당 저장 위치에서 직접 삭제해야 합니다. 앱을 삭제하거나 기기를 바꾸기 전에 필요한 기록을 별도로 백업하고 파일이 정상적으로 열리는지 확인해 주세요.</p>
+        </section>
+
+        <section aria-labelledby="policy-services">
+          <h2 id="policy-services">5. 외부 서비스 이용</h2>
+          <p>My Crew Mate는 근무 기록을 운영자 서버에 자동으로 동기화하지 않습니다. 사용자가 iCloud Drive 등 외부 저장 서비스에 백업을 보관하거나 다른 사람과 공유하면, 해당 서비스나 수신자가 파일을 보관할 수 있습니다. 외부 서비스의 보관과 삭제는 해당 서비스의 정책과 사용자 설정에 따릅니다.</p>
+          <p>Apple의 iCloud 기기 백업을 이용하는 경우 앱 데이터 일부가 기기 백업에 포함될 수 있습니다. 이는 My Crew Mate가 제공하는 클라우드 동기화 기능과 다르며, 실제 백업·복원되는 항목은 iPhone 설정과 복원 환경에 따라 달라질 수 있습니다.</p>
+          <p>개인정보 문의를 이메일로 보내는 경우, 이메일 주소·문의 내용·첨부파일은 이메일 서비스에서도 처리될 수 있습니다. 이는 앱의 근무 기록이 자동으로 운영자에게 전송된다는 의미는 아닙니다.</p>
+        </section>
+
+        <section aria-labelledby="policy-contact-heading">
+          <h2 id="policy-contact-heading">6. 개인정보 관련 문의</h2>
+          <p>사용자는 앱 이용 및 개인정보 처리에 관해 문의하거나, 운영자가 보유한 개인정보의 열람·정정·삭제 등을 요청할 수 있습니다. 기기에만 저장된 근무 기록은 운영자가 원격으로 열람하거나 직접 삭제할 수 없습니다.</p>
+          <p>문의 처리를 위해 보낸 사람의 이메일 주소, 문의 내용 및 사용자가 직접 첨부한 파일을 이용합니다. <strong>문의 이메일과 첨부파일은 문의 처리 완료일로부터 90일간 보관한 뒤 삭제합니다.</strong> 법령상 별도의 보관 의무가 있는 경우에는 해당 법령에서 정한 기간 동안 보관한 뒤 삭제합니다.</p>
+          <p>개인정보가 포함된 근무 기록이나 JSON 백업 파일은 문의 메일에 첨부하지 않는 것을 권장합니다.</p>
+          <div class="policy-contact">
+            <p class="policy-contact-label">운영자 및 개인정보 관련 문의 담당자</p>
+            <strong class="policy-contact-name">손승민</strong>
+            <a href="mailto:minboy6@gmail.com">minboy6@gmail.com</a>
+          </div>
+        </section>
+
+        <section aria-labelledby="policy-effective">
+          <h2 id="policy-effective">7. 처리방침의 변경 및 시행일</h2>
+          <p>본 개인정보 처리방침은 My Crew Mate iOS 앱에 적용됩니다. 내용이 변경되면 이 페이지에 변경 사항과 시행일을 안내합니다.</p>
+          <p class="policy-date">시행일: 2026년 11월 20일</p>
+        </section>
+      </div>
+      <a class="back-link policy-bottom-link" href="index.html">← 고객지원 홈으로 돌아가기</a>
+    </main>
+
+    <footer class="site-footer">
+      <a class="brand" href="index.html">
+        <span class="brand-mark" aria-hidden="true">M</span>
+        <span>My Crew Mate</span>
+      </a>
+      <small>© My Crew Mate</small>
+    </footer>
+  </body>
+</html>
